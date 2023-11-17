@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE717A6B95FB266E758C499E /* Pods_MarvelMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B89ACDF95AF057F6353059 /* Pods_MarvelMovies.framework */; };
+		DD0670552B077E010081DD4C /* MarvelFilmsViewController+Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0670542B077E010081DD4C /* MarvelFilmsViewController+Delegates.swift */; };
+		DD0670572B077E5D0081DD4C /* MarvelFilmsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0670562B077E5D0081DD4C /* MarvelFilmsModel.swift */; };
+		DD06705D2B0784BE0081DD4C /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06705C2B0784BE0081DD4C /* APIServices.swift */; };
+		DD06705F2B0784ED0081DD4C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06705E2B0784ED0081DD4C /* NetworkService.swift */; };
+		DD0670632B0792CF0081DD4C /* MarvalMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0670622B0792CF0081DD4C /* MarvalMoviesViewModel.swift */; };
 		DDD4F73E2B0550AD005BF298 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD4F73D2B0550AD005BF298 /* AppDelegate.swift */; };
 		DDD4F7402B0550AD005BF298 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD4F73F2B0550AD005BF298 /* SceneDelegate.swift */; };
 		DDD4F7422B0550AD005BF298 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD4F7412B0550AD005BF298 /* ViewController.swift */; };
@@ -19,6 +25,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		56C3F8CA32584C8F4569E51D /* Pods-MarvelMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelMovies.debug.xcconfig"; path = "Target Support Files/Pods-MarvelMovies/Pods-MarvelMovies.debug.xcconfig"; sourceTree = "<group>"; };
+		91AF2C4D56158D5C488BDAD0 /* Pods-MarvelMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelMovies.release.xcconfig"; path = "Target Support Files/Pods-MarvelMovies/Pods-MarvelMovies.release.xcconfig"; sourceTree = "<group>"; };
+		A2B89ACDF95AF057F6353059 /* Pods_MarvelMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0670542B077E010081DD4C /* MarvelFilmsViewController+Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarvelFilmsViewController+Delegates.swift"; sourceTree = "<group>"; };
+		DD0670562B077E5D0081DD4C /* MarvelFilmsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelFilmsModel.swift; sourceTree = "<group>"; };
+		DD06705C2B0784BE0081DD4C /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		DD06705E2B0784ED0081DD4C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DD0670622B0792CF0081DD4C /* MarvalMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvalMoviesViewModel.swift; sourceTree = "<group>"; };
 		DDD4F73A2B0550AD005BF298 /* MarvelMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD4F73D2B0550AD005BF298 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDD4F73F2B0550AD005BF298 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,17 +51,71 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE717A6B95FB266E758C499E /* Pods_MarvelMovies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24A7A1D5133F10BC4EE7A501 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2B89ACDF95AF057F6353059 /* Pods_MarvelMovies.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA10101A459C044B6241B848 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56C3F8CA32584C8F4569E51D /* Pods-MarvelMovies.debug.xcconfig */,
+				91AF2C4D56158D5C488BDAD0 /* Pods-MarvelMovies.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DD0670522B077D630081DD4C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				DDD4F73D2B0550AD005BF298 /* AppDelegate.swift */,
+				DDD4F73F2B0550AD005BF298 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		DD0670532B077D850081DD4C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DDD4F7462B0550AF005BF298 /* Assets.xcassets */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DD06705A2B0782CC0081DD4C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DDD4F7572B058BF8005BF298 /* MarvalMovies */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DD06705B2B07848F0081DD4C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DD06705C2B0784BE0081DD4C /* APIServices.swift */,
+				DD06705E2B0784ED0081DD4C /* NetworkService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		DDD4F7312B0550AD005BF298 = {
 			isa = PBXGroup;
 			children = (
 				DDD4F73C2B0550AD005BF298 /* MarvelMovies */,
 				DDD4F73B2B0550AD005BF298 /* Products */,
+				CA10101A459C044B6241B848 /* Pods */,
+				24A7A1D5133F10BC4EE7A501 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,12 +130,12 @@
 		DDD4F73C2B0550AD005BF298 /* MarvelMovies */ = {
 			isa = PBXGroup;
 			children = (
-				DDD4F7572B058BF8005BF298 /* MarvalMovies */,
-				DDD4F73D2B0550AD005BF298 /* AppDelegate.swift */,
-				DDD4F73F2B0550AD005BF298 /* SceneDelegate.swift */,
+				DD0670532B077D850081DD4C /* Utilities */,
+				DD0670522B077D630081DD4C /* Delegates */,
+				DD06705B2B07848F0081DD4C /* Data */,
+				DD06705A2B0782CC0081DD4C /* Presentation */,
 				DDD4F7412B0550AD005BF298 /* ViewController.swift */,
 				DDD4F7432B0550AD005BF298 /* Main.storyboard */,
-				DDD4F7462B0550AF005BF298 /* Assets.xcassets */,
 				DDD4F7482B0550AF005BF298 /* LaunchScreen.storyboard */,
 				DDD4F74B2B0550AF005BF298 /* Info.plist */,
 			);
@@ -87,6 +155,7 @@
 		DDD4F7582B058C7D005BF298 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD0670562B077E5D0081DD4C /* MarvelFilmsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -94,6 +163,7 @@
 		DDD4F7592B058C82005BF298 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DD0670622B0792CF0081DD4C /* MarvalMoviesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -103,6 +173,7 @@
 			children = (
 				DDD4F75B2B058C99005BF298 /* Cell */,
 				DDD4F7532B057C50005BF298 /* MarvelFilmsViewController.swift */,
+				DD0670542B077E010081DD4C /* MarvelFilmsViewController+Delegates.swift */,
 				DDD4F7512B057C26005BF298 /* MarverlFilms.storyboard */,
 			);
 			path = View;
@@ -123,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDD4F74E2B0550AF005BF298 /* Build configuration list for PBXNativeTarget "MarvelMovies" */;
 			buildPhases = (
+				E15396CE5F66418CFA1DBE18 /* [CP] Check Pods Manifest.lock */,
 				DDD4F7362B0550AD005BF298 /* Sources */,
 				DDD4F7372B0550AD005BF298 /* Frameworks */,
 				DDD4F7382B0550AD005BF298 /* Resources */,
+				4E03156E0AAFD1BE0D49CDD8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,16 +256,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E03156E0AAFD1BE0D49CDD8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarvelMovies/Pods-MarvelMovies-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarvelMovies/Pods-MarvelMovies-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarvelMovies/Pods-MarvelMovies-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E15396CE5F66418CFA1DBE18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarvelMovies-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DDD4F7362B0550AD005BF298 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD0670632B0792CF0081DD4C /* MarvalMoviesViewModel.swift in Sources */,
+				DD06705F2B0784ED0081DD4C /* NetworkService.swift in Sources */,
+				DD0670572B077E5D0081DD4C /* MarvelFilmsModel.swift in Sources */,
 				DDD4F7422B0550AD005BF298 /* ViewController.swift in Sources */,
 				DDD4F73E2B0550AD005BF298 /* AppDelegate.swift in Sources */,
+				DD0670552B077E010081DD4C /* MarvelFilmsViewController+Delegates.swift in Sources */,
 				DDD4F7402B0550AD005BF298 /* SceneDelegate.swift in Sources */,
 				DDD4F7542B057C50005BF298 /* MarvelFilmsViewController.swift in Sources */,
 				DDD4F7562B057D0E005BF298 /* MarvalFilmTableViewCell.swift in Sources */,
+				DD06705D2B0784BE0081DD4C /* APIServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +375,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -318,7 +438,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -339,6 +459,7 @@
 		};
 		DDD4F74F2B0550AF005BF298 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56C3F8CA32584C8F4569E51D /* Pods-MarvelMovies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -366,6 +487,7 @@
 		};
 		DDD4F7502B0550AF005BF298 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91AF2C4D56158D5C488BDAD0 /* Pods-MarvelMovies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
