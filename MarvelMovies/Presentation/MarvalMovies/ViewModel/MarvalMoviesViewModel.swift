@@ -9,27 +9,42 @@ import Foundation
 import Alamofire
 import NVActivityIndicatorView
 
-class MarvalMoviesViewModel {
-    
-    var MarvelFilmsBinding : (() -> ()) = {}
-    var fetchAllMovies: [FilmsResult] = []{
+protocol MarvalMoviesViewModelProtocol{
+    var MarvelFilmsBinding : (() -> ())? { get set }
+    var totalNumOfData:Int? { get set }
+    var fetchAllMovies: [FilmsResult]? { get set}
+    var filmByIdBinding: (() -> ())? {get set}
+    var filmDetails: [FilmsResult]? {get set}
+    var filmFromCoreBinding: (() -> ())? {get set}
+    var filmFromCore:FilmsDetailsResult?{get set}
+    func getFilms(view:UIView,limit:Int,offestNum:Int)
+    func getFilmById(view:UIView,id:String)
+    func saveFilmInCoreData(filmDescription:String,filmEndYear:Int,filmId:Int)
+    func fetchFilmFromCoreData(filmId:Int)
+    func SearchForFilm(seaechWord:String)
+}
+
+class MarvalMoviesViewModel:MarvalMoviesViewModelProtocol{
+    var MarvelFilmsBinding : (() -> ())?
+    var totalNumOfData:Int?
+    var fetchAllMovies: [FilmsResult]?{
         didSet{
             //bind the result
-            MarvelFilmsBinding()
+            MarvelFilmsBinding?()
         }
     }
     var savedFilms: [FilmsResult] = []
-    var filmByIdBinding: (() -> ()) = {}
-    var filmDetails : [FilmsResult] = []{
+    var filmByIdBinding: (() -> ())?
+    var filmDetails : [FilmsResult]?{
         didSet{
-            filmByIdBinding()
+            filmByIdBinding?()
         }
     }
-    var filmFromCoreBinding: (() -> ()) = {}
+    var filmFromCoreBinding: (() -> ())?
     var filmsFromCoreData : [FilmsDetailsResult] = []
     var filmFromCore:FilmsDetailsResult?{
         didSet{
-            filmFromCoreBinding()
+            filmFromCoreBinding?()
         }
     }
 
@@ -39,9 +54,10 @@ class MarvalMoviesViewModel {
                 self.fetchAllMovies = data?.data?.results ?? []
             }
             else{
-                self.fetchAllMovies += data?.data?.results ?? []
+                self.fetchAllMovies! += data?.data?.results ?? []
             }
-            savedFilms = fetchAllMovies
+            self.totalNumOfData = data?.data?.total ?? 0
+            savedFilms = fetchAllMovies ?? []
         }
     }
     
@@ -64,7 +80,7 @@ class MarvalMoviesViewModel {
         }
     }
     func SearchForFilm(seaechWord:String){
-        fetchAllMovies = seaechWord.isEmpty ? savedFilms: fetchAllMovies.filter{($0.title!.lowercased().contains(seaechWord.lowercased()))}
+        fetchAllMovies = seaechWord.isEmpty ? savedFilms: fetchAllMovies?.filter{($0.title!.lowercased().contains(seaechWord.lowercased()))}
     }
 
     

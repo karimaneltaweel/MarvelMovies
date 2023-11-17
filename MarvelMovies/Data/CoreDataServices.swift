@@ -9,8 +9,13 @@ import Foundation
 import UIKit
 import CoreData
 
-class CoreDataManager
-{
+protocol CoreDataManagerProtocol{
+    static func saveToCoreData(filmDescription : String , filmEndYear : Int , filmId: Int)
+    static func fetchFromCoreData() ->[FilmsDetailsResult]
+}
+
+
+class CoreDataManager:CoreDataManagerProtocol{
     static var context : NSManagedObjectContext?
     static var appDelegate : AppDelegate?
     
@@ -33,7 +38,7 @@ class CoreDataManager
             FilmDescription.setValue(filmDescription, forKey: "filmDescription")
             FilmDescription.setValue(filmEndYear, forKey: "filmEndYear")
             FilmDescription.setValue(filmId, forKey: "filmId")
-            
+            UserDefaults.standard.setValue(true, forKey:"\(filmId)")
             print("Saved Successfully")
             
             try myContext.save()

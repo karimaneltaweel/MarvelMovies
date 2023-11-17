@@ -9,8 +9,13 @@ import Foundation
 import Alamofire
 import NVActivityIndicatorView
 
-class NetworkService {
-    class func request<T: Codable>(url: String,method: HTTPMethod,view:UIView,callBack:@escaping (T?) -> Void) {
+protocol NetworkServiceProtocol{
+    static func request<T: Codable>(url: String,method: HTTPMethod,view:UIView,callBack:@escaping (T?) -> Void)
+}
+
+class NetworkService:NetworkServiceProtocol{
+   
+    static func request<T: Codable>(url: String,method: HTTPMethod,view:UIView,callBack:@escaping (T?) -> Void) {
         
         let frame = CGRect(x: view.frame.width / 2 , y: view.frame.height / 2, width: 0, height: 0)
         let activityIndicatorView = NVActivityIndicatorView(frame: frame,

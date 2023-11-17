@@ -32,7 +32,6 @@ struct FilmsResult: Codable {
     var type: String?
     var thumbnail: Thumbnail?
     var isSelected: Bool? = false
-    var FirstPressed:Bool? = false
 }
 
 enum Rating: String, Codable {

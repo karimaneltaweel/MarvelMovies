@@ -25,7 +25,7 @@ class MarvelFilmsViewController: UIViewController {
     let gradient = CAGradientLayer()
     var index: Int?
     var offsetNo: Int = 0
-    var FilmsViewModel : MarvalMoviesViewModel = MarvalMoviesViewModel()
+    var FilmsViewModel : MarvalMoviesViewModelProtocol = MarvalMoviesViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
