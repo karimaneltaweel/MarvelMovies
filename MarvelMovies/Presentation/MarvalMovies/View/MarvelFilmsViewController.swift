@@ -39,7 +39,14 @@ class MarvelFilmsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         FilmsViewModel.getFilms(view: self.view,limit: 15 ,offestNum: offsetNo)
+        
         FilmsViewModel.MarvelFilmsBinding = {
+                      DispatchQueue.main.async{ [weak self] in
+                          self?.filmsTable.reloadData()
+                      }
+                  }
+        
+        FilmsViewModel.filmByIdBinding = {
                       DispatchQueue.main.async{ [weak self] in
                           self?.filmsTable.reloadData()
                       }
@@ -52,6 +59,7 @@ class MarvelFilmsViewController: UIViewController {
         view.layer.borderColor = borderColor
         view.clipsToBounds = true
     }
+    
     private func setupSearchBarView() {
         searchField.leftViewMode = UITextField.ViewMode.always
         let imageView = UIImageView(frame: CGRect(x:0, y: 0, width: 50, height: 20))
@@ -68,4 +76,5 @@ class MarvelFilmsViewController: UIViewController {
         gradient.endPoint = CGPoint(x: 0.0,y: 1)
         return gradient
     }
+    
 }

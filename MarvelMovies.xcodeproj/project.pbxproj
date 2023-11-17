@@ -13,10 +13,10 @@
 		DD06705D2B0784BE0081DD4C /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06705C2B0784BE0081DD4C /* APIServices.swift */; };
 		DD06705F2B0784ED0081DD4C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06705E2B0784ED0081DD4C /* NetworkService.swift */; };
 		DD0670632B0792CF0081DD4C /* MarvalMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0670622B0792CF0081DD4C /* MarvalMoviesViewModel.swift */; };
+		DDAF01432B07C24B00A9C3E5 /* MarvelMovies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDAF01412B07C24B00A9C3E5 /* MarvelMovies.xcdatamodeld */; };
+		DDAF01452B07C41E00A9C3E5 /* CoreDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF01442B07C41E00A9C3E5 /* CoreDataServices.swift */; };
 		DDD4F73E2B0550AD005BF298 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD4F73D2B0550AD005BF298 /* AppDelegate.swift */; };
 		DDD4F7402B0550AD005BF298 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD4F73F2B0550AD005BF298 /* SceneDelegate.swift */; };
-		DDD4F7422B0550AD005BF298 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD4F7412B0550AD005BF298 /* ViewController.swift */; };
-		DDD4F7452B0550AD005BF298 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD4F7432B0550AD005BF298 /* Main.storyboard */; };
 		DDD4F7472B0550AF005BF298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDD4F7462B0550AF005BF298 /* Assets.xcassets */; };
 		DDD4F74A2B0550AF005BF298 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD4F7482B0550AF005BF298 /* LaunchScreen.storyboard */; };
 		DDD4F7522B057C26005BF298 /* MarverlFilms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD4F7512B057C26005BF298 /* MarverlFilms.storyboard */; };
@@ -33,11 +33,11 @@
 		DD06705C2B0784BE0081DD4C /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		DD06705E2B0784ED0081DD4C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DD0670622B0792CF0081DD4C /* MarvalMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvalMoviesViewModel.swift; sourceTree = "<group>"; };
+		DDAF01422B07C24B00A9C3E5 /* FilmsData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FilmsData.xcdatamodel; sourceTree = "<group>"; };
+		DDAF01442B07C41E00A9C3E5 /* CoreDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServices.swift; sourceTree = "<group>"; };
 		DDD4F73A2B0550AD005BF298 /* MarvelMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD4F73D2B0550AD005BF298 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDD4F73F2B0550AD005BF298 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DDD4F7412B0550AD005BF298 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DDD4F7442B0550AD005BF298 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDD4F7462B0550AF005BF298 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDD4F7492B0550AF005BF298 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDD4F74B2B0550AF005BF298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +105,7 @@
 			children = (
 				DD06705C2B0784BE0081DD4C /* APIServices.swift */,
 				DD06705E2B0784ED0081DD4C /* NetworkService.swift */,
+				DDAF01442B07C41E00A9C3E5 /* CoreDataServices.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -134,10 +135,9 @@
 				DD0670522B077D630081DD4C /* Delegates */,
 				DD06705B2B07848F0081DD4C /* Data */,
 				DD06705A2B0782CC0081DD4C /* Presentation */,
-				DDD4F7412B0550AD005BF298 /* ViewController.swift */,
-				DDD4F7432B0550AD005BF298 /* Main.storyboard */,
 				DDD4F7482B0550AF005BF298 /* LaunchScreen.storyboard */,
 				DDD4F74B2B0550AF005BF298 /* Info.plist */,
+				DDAF01412B07C24B00A9C3E5 /* MarvelMovies.xcdatamodeld */,
 			);
 			path = MarvelMovies;
 			sourceTree = "<group>";
@@ -145,8 +145,8 @@
 		DDD4F7572B058BF8005BF298 /* MarvalMovies */ = {
 			isa = PBXGroup;
 			children = (
-				DDD4F7592B058C82005BF298 /* ViewModel */,
 				DDD4F7582B058C7D005BF298 /* Model */,
+				DDD4F7592B058C82005BF298 /* ViewModel */,
 				DDD4F75A2B058C8D005BF298 /* View */,
 			);
 			path = MarvalMovies;
@@ -250,7 +250,6 @@
 				DDD4F74A2B0550AF005BF298 /* LaunchScreen.storyboard in Resources */,
 				DDD4F7472B0550AF005BF298 /* Assets.xcassets in Resources */,
 				DDD4F7522B057C26005BF298 /* MarverlFilms.storyboard in Resources */,
-				DDD4F7452B0550AD005BF298 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,9 +305,10 @@
 				DD0670632B0792CF0081DD4C /* MarvalMoviesViewModel.swift in Sources */,
 				DD06705F2B0784ED0081DD4C /* NetworkService.swift in Sources */,
 				DD0670572B077E5D0081DD4C /* MarvelFilmsModel.swift in Sources */,
-				DDD4F7422B0550AD005BF298 /* ViewController.swift in Sources */,
 				DDD4F73E2B0550AD005BF298 /* AppDelegate.swift in Sources */,
 				DD0670552B077E010081DD4C /* MarvelFilmsViewController+Delegates.swift in Sources */,
+				DDAF01432B07C24B00A9C3E5 /* MarvelMovies.xcdatamodeld in Sources */,
+				DDAF01452B07C41E00A9C3E5 /* CoreDataServices.swift in Sources */,
 				DDD4F7402B0550AD005BF298 /* SceneDelegate.swift in Sources */,
 				DDD4F7542B057C50005BF298 /* MarvelFilmsViewController.swift in Sources */,
 				DDD4F7562B057D0E005BF298 /* MarvalFilmTableViewCell.swift in Sources */,
@@ -319,14 +319,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DDD4F7432B0550AD005BF298 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDD4F7442B0550AD005BF298 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DDD4F7482B0550AF005BF298 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -535,6 +527,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DDAF01412B07C24B00A9C3E5 /* MarvelMovies.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DDAF01422B07C24B00A9C3E5 /* FilmsData.xcdatamodel */,
+			);
+			currentVersion = DDAF01422B07C24B00A9C3E5 /* FilmsData.xcdatamodel */;
+			path = MarvelMovies.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DDD4F7322B0550AD005BF298 /* Project object */;
 }

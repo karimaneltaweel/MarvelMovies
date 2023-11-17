@@ -18,4 +18,5 @@ class URLs {
     func getFilmById(filmId:String) -> String {
         url + "series/\(filmId)?ts=1&apikey=db5c8fc0b76101aa46012521b7da1855&hash=d8686c1da64e81c70fded01f699776b2"
     }
+    
 }

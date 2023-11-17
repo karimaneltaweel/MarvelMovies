@@ -32,8 +32,8 @@ struct FilmsResult: Codable {
     var type: String?
     var thumbnail: Thumbnail?
     var isSelected: Bool? = false
+    var FirstPressed:Bool? = false
 }
-
 
 enum Rating: String, Codable {
     case empty = ""
@@ -64,4 +64,20 @@ struct URLElement: Codable {
 
 enum URLType: String, Codable {
     case detail = "detail"
+}
+
+//----------------------------core data----------------------
+
+struct MarvelFilmsDetails: Codable {
+    var data: DataDetailsClass?
+}
+
+struct DataDetailsClass: Codable {
+    var results: [FilmsDetailsResult]?
+}
+
+struct FilmsDetailsResult: Codable {
+    var id: Int?
+    var description: String?
+    var endYear: Int?
 }

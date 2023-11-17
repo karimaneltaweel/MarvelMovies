@@ -16,6 +16,6 @@ class MarvalFilmTableViewCell: UITableViewCell {
     @IBOutlet weak var filmTitle: UILabel!
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var filmDescription: UILabel!
-    @IBOutlet weak var filmType: UILabel!
+    @IBOutlet weak var endYear: UILabel!
     
 }
