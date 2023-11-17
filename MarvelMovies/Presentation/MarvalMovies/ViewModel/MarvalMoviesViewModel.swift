@@ -12,20 +12,26 @@ import NVActivityIndicatorView
 class MarvalMoviesViewModel {
     
     var MarvelFilmsBinding : (() -> ()) = {}
-    var filmByIdBinding: (() -> ()) = {}
     var fetchAllMovies: [FilmsResult] = []{
         didSet{
             //bind the result
             MarvelFilmsBinding()
         }
     }
-    
-    var filmDetails : [FilmsDetailsResult] = []{
+    var filmByIdBinding: (() -> ()) = {}
+    var filmDetails : [FilmsResult] = []{
         didSet{
             filmByIdBinding()
         }
     }
-    
+    var filmFromCoreBinding: (() -> ()) = {}
+    var filmsFromCoreData : [FilmsDetailsResult] = []
+    var filmFromCore:FilmsDetailsResult?{
+        didSet{
+            filmFromCoreBinding()
+        }
+    }
+
     func getFilms(view:UIView,limit:Int,offestNum:Int){
         NetworkService.request(url: URLs.Instance.getAllFilms(limit: limit, offest: offestNum), method: .get, view: view) { (data: MarvelFilms?) in
             if offestNum == 0 {
@@ -38,7 +44,7 @@ class MarvalMoviesViewModel {
     }
     
     func getFilmById(view:UIView,id:String){
-        NetworkService.request(url: URLs.Instance.getFilmById(filmId: id), method: .get, view: view) { (data: MarvelFilmsDetails?) in
+        NetworkService.request(url: URLs.Instance.getFilmById(filmId: id), method: .get, view: view) { (data: MarvelFilms?) in
             self.filmDetails = data?.data?.results ?? []
         }
     }
@@ -48,12 +54,10 @@ class MarvalMoviesViewModel {
     }
     
     func fetchFilmFromCoreData(filmId:Int){
-        
-        filmDetails = CoreDataManager.fetchFromCoreData()
-        
-        for i in filmDetails{
+        filmsFromCoreData = CoreDataManager.fetchFromCoreData()
+        for i in filmsFromCoreData{
             if filmId == i.id{
-                
+                filmFromCore = i
             }
         }
     }

@@ -46,11 +46,6 @@ class MarvelFilmsViewController: UIViewController {
                       }
                   }
         
-        FilmsViewModel.filmByIdBinding = {
-                      DispatchQueue.main.async{ [weak self] in
-                          self?.filmsTable.reloadData()
-                      }
-                  }
     }
     
     func viewCorner(view:UIView,borderColor:CGColor){
