@@ -10,7 +10,6 @@ import UIKit
 class MarvelFilmsViewController: UIViewController {
     
     @IBOutlet var backgroundView: UIView!
-    
     @IBOutlet weak var searchView: UIView!{
         didSet{
             viewCorner(view: searchView,borderColor: UIColor.red.cgColor)
@@ -39,13 +38,16 @@ class MarvelFilmsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         FilmsViewModel.getFilms(view: self.view,limit: 15 ,offestNum: offsetNo)
-        
         FilmsViewModel.MarvelFilmsBinding = {
-                      DispatchQueue.main.async{ [weak self] in
-                          self?.filmsTable.reloadData()
-                      }
-                  }
+            DispatchQueue.main.async{ [weak self] in
+                self?.filmsTable.reloadData()
+            }
+        }
         
+    }
+    
+    @IBAction func SearchAction(_ sender: UITextField) {
+        FilmsViewModel.SearchForFilm(seaechWord: sender.text ?? "")
     }
     
     func viewCorner(view:UIView,borderColor:CGColor){

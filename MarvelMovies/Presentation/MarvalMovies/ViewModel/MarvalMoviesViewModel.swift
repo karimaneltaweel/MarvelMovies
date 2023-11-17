@@ -18,6 +18,7 @@ class MarvalMoviesViewModel {
             MarvelFilmsBinding()
         }
     }
+    var savedFilms: [FilmsResult] = []
     var filmByIdBinding: (() -> ()) = {}
     var filmDetails : [FilmsResult] = []{
         didSet{
@@ -33,13 +34,14 @@ class MarvalMoviesViewModel {
     }
 
     func getFilms(view:UIView,limit:Int,offestNum:Int){
-        NetworkService.request(url: URLs.Instance.getAllFilms(limit: limit, offest: offestNum), method: .get, view: view) { (data: MarvelFilms?) in
+        NetworkService.request(url: URLs.Instance.getAllFilms(limit: limit, offest: offestNum), method: .get, view: view) { [self] (data: MarvelFilms?) in
             if offestNum == 0 {
                 self.fetchAllMovies = data?.data?.results ?? []
             }
             else{
                 self.fetchAllMovies += data?.data?.results ?? []
             }
+            savedFilms = fetchAllMovies
         }
     }
     
@@ -61,6 +63,10 @@ class MarvalMoviesViewModel {
             }
         }
     }
+    func SearchForFilm(seaechWord:String){
+        fetchAllMovies = seaechWord.isEmpty ? savedFilms: fetchAllMovies.filter{($0.title!.lowercased().contains(seaechWord.lowercased()))}
+    }
+
     
     
 }

@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="132" width="393" height="720"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MarvalFilmTableViewCell" rowHeight="528" id="dPh-Fy-4lL" customClass="MarvalFilmTableViewCell" customModule="MarvelMovies" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MarvalFilmTableViewCell" rowHeight="528" id="dPh-Fy-4lL" customClass="MarvalFilmTableViewCell" customModule="MarvelMovies" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="528"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dPh-Fy-4lL" id="GcN-T9-jmY">
@@ -62,8 +62,20 @@
                                                                         </stackView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zs-Og-32Z">
                                                                             <rect key="frame" x="89" y="286" width="175" height="26"/>
-                                                                            <color key="backgroundColor" red="0.58943665030000003" green="0.1190689281" blue="0.082294844089999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1e-XY-TNe">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="26"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                            </subviews>
+                                                                            <color key="backgroundColor" red="0.9960973858833313" green="0.00041796540608629584" blue="0.032502476125955582" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
+                                                                                <constraint firstAttribute="trailing" secondItem="q1e-XY-TNe" secondAttribute="trailing" id="0F1-Is-Nkd"/>
+                                                                                <constraint firstItem="q1e-XY-TNe" firstAttribute="leading" secondItem="9Zs-Og-32Z" secondAttribute="leading" id="Dur-zh-tVR"/>
+                                                                                <constraint firstItem="q1e-XY-TNe" firstAttribute="top" secondItem="9Zs-Og-32Z" secondAttribute="top" id="IPi-Me-JBA"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="q1e-XY-TNe" secondAttribute="bottom" id="OGx-Lc-ihC"/>
                                                                                 <constraint firstAttribute="height" constant="26" id="ZtB-P9-8Is"/>
                                                                             </constraints>
                                                                             <userDefinedRuntimeAttributes>
@@ -86,8 +98,8 @@
                                                                         </view>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AvengersAvengersAvengersAvengersAvengersAvengers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgb-8v-cIm">
                                                                             <rect key="frame" x="15" y="176" width="323" height="66"/>
-                                                                            <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
-                                                                            <color key="textColor" red="0.58943665030000003" green="0.1190689281" blue="0.082294844089999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                                                            <color key="textColor" white="0.70068068731398814" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
@@ -116,7 +128,7 @@
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTe-UF-kUE">
                                                                             <rect key="frame" x="0.0" y="0.0" width="353" height="4"/>
-                                                                            <color key="backgroundColor" red="0.58943665030000003" green="0.1190689281" blue="0.082294844089999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            <color key="backgroundColor" red="0.9960973858833313" green="0.00041796540608629584" blue="0.032502476125955582" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="4" id="htK-of-mEe"/>
                                                                             </constraints>
@@ -127,7 +139,7 @@
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0X9-g9-cBa">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="82" height="17.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="14"/>
-                                                                                    <color key="textColor" red="0.58943665030000003" green="0.1190689281" blue="0.082294844089999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                    <color key="textColor" red="0.9960973858833313" green="0.00041796540608629584" blue="0.032502476125955582" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APn-uu-qHo">
@@ -146,7 +158,7 @@
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5SK-ZW-vmu">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="64" height="17.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="14"/>
-                                                                                    <color key="textColor" red="0.58943665030000003" green="0.1190689281" blue="0.082294844089999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                    <color key="textColor" red="0.9960973858833313" green="0.00041796540608629584" blue="0.032502476125955582" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sss" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Yy-KZ-zt9">
@@ -198,6 +210,7 @@
                                             <outlet property="filmExpendedView" destination="aOE-sT-bdf" id="MmS-ff-hCF"/>
                                             <outlet property="filmImg" destination="n3d-fL-4Gg" id="2WX-mn-8WE"/>
                                             <outlet property="filmMainView" destination="C2c-UE-YyE" id="h2i-Zz-PF3"/>
+                                            <outlet property="filmRate" destination="q1e-XY-TNe" id="hd7-Zp-1cg"/>
                                             <outlet property="filmTitle" destination="sgb-8v-cIm" id="yMZ-pm-gee"/>
                                             <outlet property="mainView" destination="BCP-vW-pGB" id="tQt-aJ-ZGT"/>
                                             <outlet property="releaseDate" destination="31W-Xd-2Eg" id="wqm-1g-oJb"/>
@@ -216,6 +229,9 @@
                                         <rect key="frame" x="10" y="0.0" width="351" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="SearchAction:" destination="B1g-RX-H2Q" eventType="editingChanged" id="blz-vF-6vz"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
