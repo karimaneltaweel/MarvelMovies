@@ -18,7 +18,7 @@ extension MarvelFilmsViewController:UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MarvalFilmTableViewCell", for: indexPath) as! MarvalFilmTableViewCell
         viewCorner(view: cell.mainView,borderColor: UIColor.lightGray.cgColor)
         //------------main-------------------
-        if (FilmsViewModel.fetchAllMovies[indexPath.row].isSelected == false){
+        if (FilmsViewModel.fetchAllMovies[indexPath.row].isSelected ?? false == false){
             cell.filmExpendedView.isHidden = true
             cell.filmTitle.text =   FilmsViewModel.fetchAllMovies[indexPath.row].title ?? "Not Found"
             cell.filmImg.kf.setImage(with:URL(string:FilmsViewModel.fetchAllMovies[indexPath.row].thumbnail?.path ?? ""),placeholder: UIImage(named: "notFound"))
