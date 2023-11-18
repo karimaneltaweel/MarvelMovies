@@ -65,16 +65,6 @@ enum URLType: String, Codable {
     case detail = "detail"
 }
 
-//----------------------------core data----------------------
-
-struct MarvelFilmsDetails: Codable {
-    var data: DataDetailsClass?
-}
-
-struct DataDetailsClass: Codable {
-    var results: [FilmsDetailsResult]?
-}
-
 struct FilmsDetailsResult: Codable {
     var id: Int?
     var description: String?

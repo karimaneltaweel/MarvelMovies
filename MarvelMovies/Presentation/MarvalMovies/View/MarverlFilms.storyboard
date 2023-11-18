@@ -36,7 +36,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2c-UE-YyE">
                                                                     <rect key="frame" x="0.0" y="0.0" width="353" height="332"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notFound" translatesAutoresizingMaskIntoConstraints="NO" id="n3d-fL-4Gg">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n3d-fL-4Gg">
                                                                             <rect key="frame" x="0.0" y="0.0" width="353" height="161"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="161" id="6ky-VZ-yMR"/>
@@ -268,7 +268,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="notFound" width="633" height="537"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

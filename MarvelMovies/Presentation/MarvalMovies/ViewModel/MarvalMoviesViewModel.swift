@@ -15,7 +15,6 @@ protocol MarvalMoviesViewModelProtocol{
     var fetchAllMovies: [FilmsResult]? { get set}
     var filmByIdBinding: (() -> ())? {get set}
     var filmDetails: [FilmsResult]? {get set}
-    var filmFromCoreBinding: (() -> ())? {get set}
     var filmFromCore:FilmsDetailsResult?{get set}
     func getFilms(view:UIView,limit:Int,offestNum:Int)
     func getFilmById(view:UIView,id:String)
@@ -40,14 +39,9 @@ class MarvalMoviesViewModel:MarvalMoviesViewModelProtocol{
             filmByIdBinding?()
         }
     }
-    var filmFromCoreBinding: (() -> ())?
     var filmsFromCoreData : [FilmsDetailsResult] = []
-    var filmFromCore:FilmsDetailsResult?{
-        didSet{
-            filmFromCoreBinding?()
-        }
-    }
-
+    var filmFromCore:FilmsDetailsResult?
+    
     func getFilms(view:UIView,limit:Int,offestNum:Int){
         NetworkService.request(url: URLs.Instance.getAllFilms(limit: limit, offest: offestNum), method: .get, view: view) { [self] (data: MarvelFilms?) in
             if offestNum == 0 {

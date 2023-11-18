@@ -20,7 +20,7 @@ extension MarvelFilmsViewController:UITableViewDataSource, UITableViewDelegate{
         viewCorner(view: cell.mainView,borderColor: UIColor.lightGray.cgColor)
         //------------main-------------------
         cell.filmTitle.text =   FilmsViewModel.fetchAllMovies?[indexPath.row].title ?? "Not Found"
-        cell.filmImg.kf.setImage(with:URL(string:FilmsViewModel.fetchAllMovies?[indexPath.row].thumbnail?.path ?? ""),placeholder: UIImage(named: "notFound"))
+        cell.filmImg.kf.setImage(with:URL(string:"\(FilmsViewModel.fetchAllMovies?[indexPath.row].thumbnail?.path ?? "").\(FilmsViewModel.fetchAllMovies?[indexPath.row].thumbnail?.thumbnailExtension?.rawValue ?? "" )"),placeholder: UIImage(named: "notFound"))
         cell.releaseDate.text = "\(FilmsViewModel.fetchAllMovies?[indexPath.row].startYear ?? 0)"
         cell.filmRate.text = FilmsViewModel.fetchAllMovies?[indexPath.row].rating?.rawValue ?? "" == "" ? "No rating" : FilmsViewModel.fetchAllMovies?[indexPath.row].rating?.rawValue
         if (FilmsViewModel.fetchAllMovies?[indexPath.row].isSelected ?? false == false){
@@ -30,14 +30,10 @@ extension MarvelFilmsViewController:UITableViewDataSource, UITableViewDelegate{
         else{
             cell.filmExpendedView.isHidden = false
             FilmsViewModel.fetchFilmFromCoreData(filmId: FilmsViewModel.fetchAllMovies?[indexPath.row].id ?? 0)
-            FilmsViewModel.filmFromCoreBinding  = {  [unowned self] in
-                DispatchQueue.main.async{ [unowned self] in
-                    cell.filmDescription.text = FilmsViewModel.filmFromCore?.description ?? "Not Found"
-                    cell.endYear.text =  "\(FilmsViewModel.filmFromCore?.endYear ?? 0000)"
-                    filmsTable.reloadData()
-                }
-            }
+            cell.filmDescription.text = FilmsViewModel.filmFromCore?.description ?? "Not Found"
+            cell.endYear.text =  "\(FilmsViewModel.filmFromCore?.endYear ?? 0000)"
         }
+        
         
         return cell
     }
@@ -59,7 +55,7 @@ extension MarvelFilmsViewController:UITableViewDataSource, UITableViewDelegate{
         //------------------------------------core data check----------------------
         if UserDefaults.standard.bool(forKey: "\(FilmsViewModel.fetchAllMovies?[indexPath.row].id ?? 0)") == false{
             FilmsViewModel.getFilmById(view: self.view, id: "\(FilmsViewModel.fetchAllMovies?[indexPath.row].id ?? 0)")
-    
+            
             FilmsViewModel.filmByIdBinding = {
                 DispatchQueue.main.async{ [unowned self] in
                     
