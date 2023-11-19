@@ -24,7 +24,6 @@ class MarvelFilmsViewController: UIViewController {
     
     let gradient = CAGradientLayer()
     var index: Int?
-    var offsetNo: Int = 0
     var FilmsViewModel : MarvalMoviesViewModelProtocol = MarvalMoviesViewModel()
     
     override func viewDidLoad() {
@@ -32,12 +31,11 @@ class MarvelFilmsViewController: UIViewController {
         let gradientColor = gradientColor()
         gradientColor.frame = backgroundView.bounds
         backgroundView.layer.insertSublayer(gradientColor, at: 0)
-        offsetNo = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FilmsViewModel.getFilms(view: self.view,limit: 15 ,offestNum: offsetNo)
+        FilmsViewModel.getFilms(view: self.view,offestNum: 0)
         FilmsViewModel.MarvelFilmsBinding = {
             DispatchQueue.main.async{ [weak self] in
                 self?.filmsTable.reloadData()

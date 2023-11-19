@@ -15,6 +15,7 @@
 		DD0670632B0792CF0081DD4C /* MarvalMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0670622B0792CF0081DD4C /* MarvalMoviesViewModel.swift */; };
 		DDAF01432B07C24B00A9C3E5 /* MarvelMovies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDAF01412B07C24B00A9C3E5 /* MarvelMovies.xcdatamodeld */; };
 		DDAF01452B07C41E00A9C3E5 /* CoreDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAF01442B07C41E00A9C3E5 /* CoreDataServices.swift */; };
+		DDC8D8612B0A7E03008E3ECD /* MarvelMoviesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC8D8602B0A7E03008E3ECD /* MarvelMoviesUseCase.swift */; };
 		DDD4F73E2B0550AD005BF298 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD4F73D2B0550AD005BF298 /* AppDelegate.swift */; };
 		DDD4F7402B0550AD005BF298 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD4F73F2B0550AD005BF298 /* SceneDelegate.swift */; };
 		DDD4F7472B0550AF005BF298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDD4F7462B0550AF005BF298 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		DD0670622B0792CF0081DD4C /* MarvalMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvalMoviesViewModel.swift; sourceTree = "<group>"; };
 		DDAF01422B07C24B00A9C3E5 /* FilmsData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FilmsData.xcdatamodel; sourceTree = "<group>"; };
 		DDAF01442B07C41E00A9C3E5 /* CoreDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServices.swift; sourceTree = "<group>"; };
+		DDC8D8602B0A7E03008E3ECD /* MarvelMoviesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelMoviesUseCase.swift; sourceTree = "<group>"; };
 		DDD4F73A2B0550AD005BF298 /* MarvelMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD4F73D2B0550AD005BF298 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDD4F73F2B0550AD005BF298 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,22 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		DDC8D85E2B0A7DB7008E3ECD /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DDC8D85F2B0A7DD9008E3ECD /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DDC8D85F2B0A7DD9008E3ECD /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				DDC8D8602B0A7E03008E3ECD /* MarvelMoviesUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		DDD4F7312B0550AD005BF298 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +151,7 @@
 			children = (
 				DD0670532B077D850081DD4C /* Utilities */,
 				DD0670522B077D630081DD4C /* Delegates */,
+				DDC8D85E2B0A7DB7008E3ECD /* Domain */,
 				DD06705B2B07848F0081DD4C /* Data */,
 				DD06705A2B0782CC0081DD4C /* Presentation */,
 				DDD4F7482B0550AF005BF298 /* LaunchScreen.storyboard */,
@@ -309,6 +328,7 @@
 				DD0670552B077E010081DD4C /* MarvelFilmsViewController+Delegates.swift in Sources */,
 				DDAF01432B07C24B00A9C3E5 /* MarvelMovies.xcdatamodeld in Sources */,
 				DDAF01452B07C41E00A9C3E5 /* CoreDataServices.swift in Sources */,
+				DDC8D8612B0A7E03008E3ECD /* MarvelMoviesUseCase.swift in Sources */,
 				DDD4F7402B0550AD005BF298 /* SceneDelegate.swift in Sources */,
 				DDD4F7542B057C50005BF298 /* MarvelFilmsViewController.swift in Sources */,
 				DDD4F7562B057D0E005BF298 /* MarvalFilmTableViewCell.swift in Sources */,

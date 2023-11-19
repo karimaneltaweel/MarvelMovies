@@ -16,19 +16,20 @@ protocol MarvalMoviesViewModelProtocol{
     var filmByIdBinding: (() -> ())? {get set}
     var filmDetails: [FilmsResult]? {get set}
     var filmFromCore:FilmsDetailsResult?{get set}
-    func getFilms(view:UIView,limit:Int,offestNum:Int)
+    func getFilms(view:UIView,offestNum:Int)
     func getFilmById(view:UIView,id:String)
     func saveFilmInCoreData(filmDescription:String,filmEndYear:Int,filmId:Int)
     func fetchFilmFromCoreData(filmId:Int)
     func SearchForFilm(seaechWord:String)
+    func pagination(indexPath:Int,view:UIView)
 }
 
 class MarvalMoviesViewModel:MarvalMoviesViewModelProtocol{
+    var marvelMoviesUseCase:MarvelFilmsUseCaseProtocol = MarvelFilmsUseCase()
     var MarvelFilmsBinding : (() -> ())?
     var totalNumOfData:Int?
     var fetchAllMovies: [FilmsResult]?{
         didSet{
-            //bind the result
             MarvelFilmsBinding?()
         }
     }
@@ -41,9 +42,10 @@ class MarvalMoviesViewModel:MarvalMoviesViewModelProtocol{
     }
     var filmsFromCoreData : [FilmsDetailsResult] = []
     var filmFromCore:FilmsDetailsResult?
+    var offsetNo: Int = 0
     
-    func getFilms(view:UIView,limit:Int,offestNum:Int){
-        NetworkService.request(url: URLs.Instance.getAllFilms(limit: limit, offest: offestNum), method: .get, view: view) { [self] (data: MarvelFilms?) in
+    func getFilms(view:UIView,offestNum:Int){
+        marvelMoviesUseCase.fetchMarvelUseCae(view: view, limit: 15, offestNum: offestNum) { [unowned self] data in
             if offestNum == 0 {
                 self.fetchAllMovies = data?.data?.results ?? []
             }
@@ -56,27 +58,41 @@ class MarvalMoviesViewModel:MarvalMoviesViewModelProtocol{
     }
     
     func getFilmById(view:UIView,id:String){
-        NetworkService.request(url: URLs.Instance.getFilmById(filmId: id), method: .get, view: view) { (data: MarvelFilms?) in
+        marvelMoviesUseCase.getFilmById(view: view, id: id) { data in
             self.filmDetails = data?.data?.results ?? []
+
         }
     }
     
     func saveFilmInCoreData(filmDescription:String,filmEndYear:Int,filmId:Int){
-        CoreDataManager.saveToCoreData(filmDescription: filmDescription, filmEndYear: filmEndYear, filmId: filmId)
+        marvelMoviesUseCase.saveInCoreData(filmDescription: filmDescription, filmEndYear: filmEndYear, filmId: filmId)
     }
     
     func fetchFilmFromCoreData(filmId:Int){
-        filmsFromCoreData = CoreDataManager.fetchFromCoreData()
+        filmsFromCoreData = marvelMoviesUseCase.fetchDataFromCore()
         for i in filmsFromCoreData{
             if filmId == i.id{
                 filmFromCore = i
             }
         }
     }
+    
     func SearchForFilm(seaechWord:String){
         fetchAllMovies = seaechWord.isEmpty ? savedFilms: fetchAllMovies?.filter{($0.title!.lowercased().contains(seaechWord.lowercased()))}
     }
-
     
+    func pagination(indexPath:Int,view:UIView){
+        guard  fetchAllMovies?.count != 0 else {
+            // Data is empty or nil
+            return
+        }
+        if indexPath == (fetchAllMovies?.count ?? 0) - 1 {
+            if fetchAllMovies?.count ?? 0 < totalNumOfData ?? 0 {
+                offsetNo += 1
+                print("nnnnnnnnnn\(offsetNo)")
+                getFilms(view: view,offestNum:offsetNo)
+            }
+        }
+    }
     
 }

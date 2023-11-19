@@ -23,6 +23,7 @@ extension MarvelFilmsViewController:UITableViewDataSource, UITableViewDelegate{
         cell.filmImg.kf.setImage(with:URL(string:"\(FilmsViewModel.fetchAllMovies?[indexPath.row].thumbnail?.path ?? "").\(FilmsViewModel.fetchAllMovies?[indexPath.row].thumbnail?.thumbnailExtension?.rawValue ?? "" )"),placeholder: UIImage(named: "notFound"))
         cell.releaseDate.text = "\(FilmsViewModel.fetchAllMovies?[indexPath.row].startYear ?? 0)"
         cell.filmRate.text = FilmsViewModel.fetchAllMovies?[indexPath.row].rating?.rawValue ?? "" == "" ? "No rating" : FilmsViewModel.fetchAllMovies?[indexPath.row].rating?.rawValue
+        
         if (FilmsViewModel.fetchAllMovies?[indexPath.row].isSelected ?? false == false){
             cell.filmExpendedView.isHidden = true
         }
@@ -69,19 +70,8 @@ extension MarvelFilmsViewController:UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if searchField.text == "" {
-            guard  FilmsViewModel.fetchAllMovies?.count != 0 else {
-                // Data is empty or nil
-                return
-            }
-            if indexPath.row == (FilmsViewModel.fetchAllMovies?.count ?? 0) - 1 {
-                if FilmsViewModel.fetchAllMovies?.count ?? 0 < FilmsViewModel.totalNumOfData ?? 0 {
-                    offsetNo += 1
-                    print("nnnnnnnnnn\(offsetNo)")
-                    FilmsViewModel.getFilms(view: self.view, limit: 15, offestNum:offsetNo)
-                }
-                
-            }
+            FilmsViewModel.pagination(indexPath: indexPath.row, view: self.view)
         }
+        
     }
-    
 }
